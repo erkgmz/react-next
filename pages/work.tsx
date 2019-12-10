@@ -23,13 +23,48 @@ class Project {
 }
 
 const projects: ProjectInterface[] = [
-  new Project('Honda Automobiles', '#', 'Alt', '#'),
-  new Project('Bulletproof', '#', 'Alt', '#'),
-  new Project('Futures That Matter', '#', 'Alt', '#'),
-  new Project('Create Purpose', 'cp_white.png', 'Alt', '#'),
-  new Project('Sippy Sips', '#', 'Alt', '#'),
-  new Project('Course Walkers', '#', 'Alt', '#')
+  new Project('Honda Automobiles', 'honda-logo.png', 'Alt', '#'),
+  new Project('Bulletproof', 'bp_logo.png', 'Alt', '#'),
+  new Project('Futures That Matter', 'ftm.png', 'Alt', '#'),
+  new Project('Create Purpose', 'cp_logo.png', 'Alt', '#'),
+  new Project('Sippy Sips', 'logo_sips.png', 'Alt', '#'),
+  new Project('Course Walkers', 'sf_logo_black.png', 'Alt', '#')
 ];
+
+const MoreTech = () => {
+  return (
+    <div className="more">
+      <div className="vendor">
+        <img src="/html5-logo.png" alt="Html 5" />
+      </div>
+      <div className="vendor">
+        <img src="/sass_logo.png" alt="Sass" />
+      </div>
+      <div className="vendor">
+        <img src="/JavaScript-logo.png" alt="JavaScript" />
+      </div>
+      <div className="vendor">
+        <img src="/reactjs_logo.png" alt="React" />
+      </div>
+      <style jsx>{`
+        .more {
+          display: flex;
+          align-items: center;
+        }
+        .more .vendor {
+          flex: 1;
+          padding: 20px;
+        }
+        img {
+          max-width: 100%;
+        }
+        h2 {
+          background-color: yellow;
+        }
+      `}</style>
+    </div>
+  );
+};
 
 const Work: NextPage = () => {
   return (
@@ -44,17 +79,12 @@ const Work: NextPage = () => {
           return (
             <div key={project.name} className="project">
               <h1>{project.name}</h1>
-              <img src={`/${project.image}`} alt="" />
+              <img src={`/${project.image}`} alt="Brand logo" />
             </div>
           );
         })}
-        <div className="more"></div>
-        <style jsx>{`
-          h2 {
-            background-color: yellow;
-          }
-        `}</style>
       </div>
+      {/* <MoreTech /> */}
     </Layout>
   );
 };
