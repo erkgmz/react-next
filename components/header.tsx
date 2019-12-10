@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
 
-const Header = props => {
+const Header = () => {
   const [pathName, setPathName] = useState('/');
 
   useEffect(() => {
