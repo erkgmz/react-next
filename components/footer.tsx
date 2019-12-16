@@ -15,16 +15,31 @@ const Footer = () => {
 
   return (
     <footer className="footer" ref={footerRef}>
-      {!isHome && (
-        <Link href="/">
-          <a>HOME</a>
-        </Link>
-      )}
-      {!isWork && (
-        <Link href="/work">
-          <a>SEE WORK</a>
-        </Link>
-      )}
+      <ul className="footer-links">
+        {!isHome && (
+          <li className="link">
+            <Link href="/">
+              <a>HOME</a>
+            </Link>
+          </li>
+        )}
+        {!isWork && (
+          <li className="link">
+            <Link href="/work">
+              <a>View Work</a>
+            </Link>
+          </li>
+        )}
+        <li className="link">
+          <a href="//www.linkedin.com/in/erkgmz/">LinkedIn</a>
+        </li>
+        <li className="link">
+          <a href="/resume.pdf" download>
+            Download Resume
+          </a>
+        </li>
+      </ul>
+
       <p className="copyright">
         &copy; 2019 - 2020 Erik Gomez All Right Reserved
       </p>
@@ -44,7 +59,33 @@ const Footer = () => {
           width: 100%;
         }
 
-        footer a {
+        footer ul {
+          display: flex;
+          flex-flow: column nowrap;
+          max-width: 500px;
+          margin: 0 auto;
+          padding: 10px 0;
+        }
+
+        @media (min-width: 768px) {
+          footer ul {
+            flex-flow: row nowrap;
+            justify-content: space-around;
+          }
+        }
+
+        footer ul li {
+          list-style: none;
+          margin-bottom: 10px;
+        }
+
+        @media (min-width: 768px) {
+          footer ul li {
+            flex-flow: row nowrap;
+          }
+        }
+
+        footer ul li a {
           color: white;
         }
 
