@@ -5,9 +5,12 @@ const Layout = props => {
     <>
       <Header />
       {props.children}
+      <style jsx>{`
+        :global(body) {
+          background-color: #f5f5f5;
+        }
+      `}</style>
     </>
-    // <ContextProvider>
-    // </ContextProvider>
   );
 };
 
