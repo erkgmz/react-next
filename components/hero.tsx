@@ -164,13 +164,12 @@ const Hero: React.FC = () => {
 
         .go-to-work {
           margin: 100px auto 0;
-          width: 50px;
+          text-align: center;
         }
 
         @media (min-width: 768px) {
           .go-to-work {
             width: 100%;
-            text-align: center;
           }
         }
 
@@ -180,6 +179,7 @@ const Hero: React.FC = () => {
           border: none;
           color: #30323d;
           outline: 0;
+          padding: 0;
         }
 
         @media (min-width: 1024px) {
