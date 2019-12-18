@@ -242,7 +242,6 @@ const Work: React.FC = () => {
           color: white;
           font-size: 10px;
           margin-bottom: 5px;
-          cursor: pointer;
           border-radius: 4px;
         }
 

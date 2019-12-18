@@ -34,6 +34,9 @@ const Header = () => {
             font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir,
               Helvetica, sans-serif;
           }
+          :global(a, button) {
+            cursor: pointer;
+          }
           ul {
             display: flex;
             justify-content: flex-end;
