@@ -1,37 +1,11 @@
-import { useRef, useState, useEffect } from 'react';
+import { smoothScrollTo } from '../utilities/smoothScrollTo';
 
 const Hero: React.FC = () => {
-  const scrollDuration = 500;
-
-  function smoothScrollTo(scrollTo: number, scrollDuration: number) {
-    const cosParameter = (window.pageYOffset - scrollTo) / 2;
-    let scrollCount = 0;
-    let oldTimestamp = window.performance.now();
-
-    function step(newTimestamp: DOMHighResTimeStamp) {
-      let tsDiff = newTimestamp - oldTimestamp;
-      if (tsDiff > 100) tsDiff = 30;
-      scrollCount += Math.PI / (scrollDuration / tsDiff);
-      // As soon as we cross over Pi, we're about where we need to be
-      if (scrollCount >= Math.PI) return;
-      window.scrollTo(
-        0,
-        scrollTo + cosParameter + cosParameter * Math.cos(scrollCount)
-      );
-      oldTimestamp = newTimestamp;
-      window.requestAnimationFrame(step);
-    }
-    window.requestAnimationFrame(step);
-  }
-
-  const handleClick = () => {
-    const scrollY: number = (document.querySelector('.work') as HTMLElement)
-      .offsetTop;
-    if ('scrollBehavior' in document.documentElement.style) {
-      window.scrollTo({ behavior: 'smooth', left: 0, top: scrollY });
-    } else {
-      smoothScrollTo(scrollY, scrollDuration);
-    }
+  const scrollToWork = () => {
+    smoothScrollTo(
+      (document.querySelector('.work') as HTMLElement).offsetTop,
+      500
+    );
   };
 
   return (
@@ -54,7 +28,7 @@ const Hero: React.FC = () => {
           </p>
         </div>
         <div className="go-to-work">
-          <button onClick={handleClick}>
+          <button onClick={scrollToWork}>
             <i className="fa fa-angle-down" aria-hidden="true"></i>
           </button>
         </div>
