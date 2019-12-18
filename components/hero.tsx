@@ -42,9 +42,9 @@ const Hero: React.FC = () => {
         </div>
         <div className="col col-right copy-block">
           <p>
-            I'm Erik Gomez, a Front-End Developer in Los Angeles, CA where I
-            work at <a href="https://www.rpa.com">RPA</a> and am one of the lead
-            developers on the{' '}
+            I'm Erik Gomez, a Front-End Developer in Los Angeles, California,
+            where I work at <a href="https://www.rpa.com">RPA</a> and am one of
+            the lead developers on the{' '}
             <a href="https://automobiles.honda.com">Honda Automobiles</a>{' '}
             project.
           </p>
@@ -124,6 +124,10 @@ const Hero: React.FC = () => {
         .hero .copy-block {
           padding-left: 10px;
           max-width: 500px;
+        }
+
+        .hero .copy-block a {
+          font-weight: 700;
         }
 
         @media (min-width: 1024px) {
