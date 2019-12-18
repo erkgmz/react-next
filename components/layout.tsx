@@ -6,7 +6,7 @@ const Layout = props => {
     <>
       <Header />
       {props.children}
-      {/* <Footer /> */}
+      <Footer />
       <style jsx>{`
         :global(body) {
           background-color: #f5f5f5;
