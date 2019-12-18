@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react';
+
 interface ProjectInterface {
   name: string;
   image: string;
@@ -77,9 +79,35 @@ const createHostName: Function = (link: string) => {
 };
 
 const Work: React.FC = () => {
+  const [isInView, setIsInView] = useState(false);
+  useEffect(() => {
+    if (window.innerWidth >= 1024) {
+      window.addEventListener('scroll', handleScroll);
+    }
+  });
+
+  const handleScroll = () => {
+    const offsetTop = (document.querySelector('.work') as HTMLElement)
+      .offsetTop;
+    const scrollY = window.scrollY;
+    if (scrollY >= offsetTop) {
+      setIsInView(true);
+    }
+    if (scrollY <= offsetTop && isInView) {
+      setIsInView(false);
+    }
+  };
+
   return (
     <div className="work">
-      <h4 className="section-headline">Work.</h4>
+      <h4
+        className="section-headline"
+        style={
+          isInView ? { position: 'fixed', top: 0 } : { position: 'static' }
+        }
+      >
+        Work.
+      </h4>
       <div className="projects">
         {projects.map((project, key) => {
           return (
