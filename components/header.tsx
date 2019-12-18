@@ -2,12 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 
 const Header = () => {
-  const [pathName, setPathName] = useState('/');
-
-  useEffect(() => {
-    setPathName(window.location.pathname);
-  });
-
   return (
     <>
       <Head>
