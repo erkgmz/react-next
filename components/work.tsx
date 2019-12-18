@@ -80,16 +80,22 @@ const createHostName: Function = (link: string) => {
 
 const Work: React.FC = () => {
   const [isInView, setIsInView] = useState(false);
+
   useEffect(() => {
     if (window.innerWidth >= 1024) {
       window.addEventListener('scroll', handleScroll);
     }
-  });
+  }, [isInView]);
 
   const handleScroll = () => {
     const offsetTop = (document.querySelector('.work') as HTMLElement)
       .offsetTop;
     const scrollY = window.scrollY;
+
+    if (window.innerWidth < 1024) {
+      setIsInView(false);
+      return;
+    }
     if (scrollY >= offsetTop) {
       setIsInView(true);
     }
