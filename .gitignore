@@ -12,6 +12,9 @@
 /.next/
 /out/
 
+# not using git integration so we can ignore the prod build
+/nextjs/
+
 # production
 /build
 
