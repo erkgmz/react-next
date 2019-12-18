@@ -1,18 +1,6 @@
-import Link from 'next/link';
-import { useState, useEffect, useRef } from 'react';
-
 const Footer = () => {
-  let [isHome, setIsHome] = useState(true);
-  let [isWork, setIsWork] = useState(false);
-  let footerRef = useRef();
-
-  useEffect(() => {
-    setIsHome(location.pathname === '/');
-    setIsWork(location.pathname === '/work');
-  }, [isHome, isWork]);
-
   return (
-    <footer className="footer" ref={footerRef}>
+    <footer className="footer">
       <ul className="footer-links">
         <li className="link">
           <a href="//www.linkedin.com/in/erkgmz/">LinkedIn</a>
