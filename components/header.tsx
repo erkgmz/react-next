@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
 import Head from 'next/head';
 
 const Header = () => {
@@ -13,23 +12,21 @@ const Header = () => {
     <>
       <Head>
         <title>Hola Mundo</title>
+        <link
+          rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
       </Head>
       <nav>
         <ul>
-          {pathName !== '/' && (
-            <li>
-              <Link href="/">
-                <a>Go Home</a>
-              </Link>
-            </li>
-          )}
-          {pathName !== '/work' && (
-            <li>
-              <Link href="/work">
-                <a>View Work</a>
-              </Link>
-            </li>
-          )}
+          <li>
+            <a href="//www.linkedin.com/in/erkgmz/">LinkedIn</a>
+          </li>
+          <li>
+            <a href="/resume.pdf" download>
+              Download Resume
+            </a>
+          </li>
         </ul>
         <style jsx>{`
           :global(body) {
@@ -40,13 +37,14 @@ const Header = () => {
           ul {
             display: flex;
             justify-content: flex-end;
+            box-sizing: border-box;
           }
           nav > ul {
             padding: 4px 16px;
           }
           li {
             display: flex;
-            padding: 6px 8px;
+            padding: 6px 10px;
           }
           a {
             color: #067df7;
