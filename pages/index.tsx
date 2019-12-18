@@ -1,19 +1,13 @@
-import { NextPage } from 'next';
 import Layout from '../components/layout';
+import Hero from '../components/hero';
+import Work from '../components/work';
+import Footer from '../components/footer';
 
-const Home: NextPage = () => {
+const Home = () => {
   return (
     <Layout>
-      <div className="home">
-        <div className="copy-wrapper">
-          <h1>
-            I’m Erik. <br />A Front-End Engineer at{' '}
-            <a href="https://www.rpa.com">RPA</a> where I work on the{' '}
-            <a href="https://automobiles.honda.com">Honda Automobiles</a>{' '}
-            project.
-          </h1>
-        </div>
-      </div>
+      <Hero />
+      <Work />
     </Layout>
   );
 };
