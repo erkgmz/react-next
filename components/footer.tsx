@@ -4,32 +4,16 @@ import { useState, useEffect, useRef } from 'react';
 const Footer = () => {
   let [isHome, setIsHome] = useState(true);
   let [isWork, setIsWork] = useState(false);
-  let [bottomPadding, setBottomPadding] = useState('');
   let footerRef = useRef();
 
   useEffect(() => {
     setIsHome(location.pathname === '/');
     setIsWork(location.pathname === '/work');
-    setBottomPadding(window.getComputedStyle(footerRef.current).height);
   }, [isHome, isWork]);
 
   return (
     <footer className="footer" ref={footerRef}>
       <ul className="footer-links">
-        {!isHome && (
-          <li className="link">
-            <Link href="/">
-              <a>HOME</a>
-            </Link>
-          </li>
-        )}
-        {!isWork && (
-          <li className="link">
-            <Link href="/work">
-              <a>View Work</a>
-            </Link>
-          </li>
-        )}
         <li className="link">
           <a href="//www.linkedin.com/in/erkgmz/">LinkedIn</a>
         </li>
@@ -44,19 +28,12 @@ const Footer = () => {
         &copy; 2019 - 2020 Erik Gomez All Right Reserved
       </p>
       <style jsx>{`
-        :global(body) {
-          padding-bottom: ${bottomPadding};
-        }
-
         footer {
           box-sizing: border-box;
           background-color: #4464ad;
           color: white;
           padding: 10px;
           text-align: center;
-          position: fixed;
-          bottom: 0;
-          width: 100%;
         }
 
         footer ul {
@@ -82,6 +59,7 @@ const Footer = () => {
         @media (min-width: 768px) {
           footer ul li {
             flex-flow: row nowrap;
+            flex: 1;
           }
         }
 
