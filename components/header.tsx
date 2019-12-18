@@ -37,6 +37,9 @@ const Header = () => {
           :global(a, button) {
             cursor: pointer;
           }
+          :global(a) {
+            color: #067df7;
+          }
           ul {
             display: flex;
             justify-content: flex-end;
