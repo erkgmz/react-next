@@ -34,10 +34,6 @@ const Hero: React.FC = () => {
         </div>
       </div>
       <style jsx>{`
-        :global(body) {
-          scroll-behavior: smooth;
-        }
-
         .hero {
           display: flex;
           flex-flow: column;

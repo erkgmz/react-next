@@ -27,17 +27,6 @@ const Header = () => {
           </li>
         </ul>
         <style jsx>{`
-          :global(body) {
-            margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir,
-              Helvetica, sans-serif;
-          }
-          :global(a, button) {
-            cursor: pointer;
-          }
-          :global(a) {
-            color: #067df7;
-          }
           ul {
             display: flex;
             justify-content: flex-end;
