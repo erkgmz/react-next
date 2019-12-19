@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 interface ProjectInterface {
   name: string;
   image: string;
-  link: string;
+  link: string[];
   copy: string;
   tags: string[];
 }
@@ -11,14 +11,14 @@ interface ProjectInterface {
 class Project {
   public name: string;
   public image: string;
-  public link: string;
+  public link: string[];
   public copy: string;
   public tags: string[];
 
   constructor(
     name: string,
     image: string,
-    link: string,
+    link: string[],
     copy: string,
     tags: string[]
   ) {
@@ -34,37 +34,37 @@ const projects: ProjectInterface[] = [
   new Project(
     'Honda Automobiles',
     'honda-logo.png',
-    'https://automobiles.honda.com/',
+    ['https://automobiles.honda.com/'],
     'As a creative developer at RPA my primary focus is the Honda Automobiles website, where I play a lead role in the planning and development of new components and integrate them into our CMS and maintain the current library of components. This includes tools like Payment Estimator, Build and Price, Dealer Locator and Vehicle Compare as well as Home and Vehicle Landing pages.',
     ['JAVASCRIPT', 'REACT', 'RIOTJS', 'SASS', 'HANDLEBARS', 'SITECORE']
   ),
   new Project(
+    'Shopify',
+    'shopify.png',
+    ['https://sippysips.com/', 'https://almsbio.com'],
+    "I'm also experienced with building projects on Shopify. This includes custom themes, schemas for content entry, plugin installation, and custom code updates.",
+    ['HTML', 'LIQUID', 'SASS', 'JAVASCRIPT', 'SHOPIFY']
+  ),
+  new Project(
     'Bulletproof',
     'bp_logo.png',
-    'https://www.bulletproof.com/',
+    ['https://www.bulletproof.com/'],
     'I had the pleasure of working with the digital marketing team at Bulletproof. We worked on a "Welcome" and "Abandoned Cart" series of custom email templates. FYI - developing responsive UI\'s for email clients is like coding in the 90\'s, remember <table>?! #nerdjoke',
     ['HTML', 'CSS', 'RESPONSIVE EMAIL TEMPLTATES']
   ),
   new Project(
     'Create Purpose',
     'cp_logo.png',
-    'https://www.createpurpose.org/',
+    ['https://www.createpurpose.org/'],
     'This was primarily a UX project focused on increasing donor activity and deploying a revamped site using Wordpress. The project is noble in its cause and the new website was a success with an increase in overall traffic and donations!',
     ['UX', 'WORDPRESS']
   ),
   new Project(
     'Course Walkers',
     'sf_logo_black.png',
-    'http://course-walkers.herokuapp.com/',
+    ['http://course-walkers.herokuapp.com/'],
     'A UI project for a client that offers their horses for stud services. Each horse has an ancestry lineage that was built with Flexbox and an accompanying video that we pull in from YouTube.',
     ['HTML', 'HANDLEBARS', 'CSS', 'JAVASCRIPT/JQUERY', 'YOUTUBE API']
-  ),
-  new Project(
-    'Sippy Sips',
-    'logo_sips.png',
-    'https://sippysips.com/',
-    'A UI project for a small company that sells vitamins for pets. This project was built on Shopify, which is how we handled the checkout process, however the theme is completely custom.',
-    ['HTML', 'LIQUID', 'SASS', 'JAVASCRIPT', 'SHOPIFY']
   )
 ];
 
@@ -109,7 +109,9 @@ const Work: React.FC = () => {
       <h4
         className="section-headline"
         style={
-          isInView ? { position: 'fixed', top: 0 } : { position: 'static' }
+          isInView
+            ? { position: 'fixed', marginTop: 0, top: 0 }
+            : { marginTop: 10 }
         }
       >
         Work.
@@ -127,9 +129,13 @@ const Work: React.FC = () => {
               </div>
               <div className="copy-block">
                 <h4 className="headline">{project.name}</h4>
-                <a href={`${project.link}`} className="link">
-                  {createHostName(project.link)}
-                </a>
+                {project.link.map((link: string, key: number) => {
+                  return (
+                    <a key={`${link}-${key}`} href={link} className="link">
+                      {createHostName(link)}
+                    </a>
+                  );
+                })}
                 <p className="description">{project.copy}</p>
                 <h4 style={{ marginBottom: 0 }}>Tools</h4>
                 {project.tags.map((tag: string, index: number) => {
@@ -175,6 +181,7 @@ const Work: React.FC = () => {
         @media (min-width: 1024px) {
           .section-headline {
             font-size: 160px;
+            transition: margin 0.5s ease-in-out;
             font-size: 14vw;
             min-width: 50%;
             /*position: fixed;*/
@@ -277,6 +284,7 @@ const Work: React.FC = () => {
           font-size: 10px;
           margin-bottom: 5px;
           border-radius: 4px;
+          margin-right: 10px;
         }
 
         @media (min-width: 1024px) {

@@ -3,7 +3,7 @@ import { smoothScrollTo } from '../utilities/smoothScrollTo';
 const Hero: React.FC = () => {
   const scrollToWork = () => {
     smoothScrollTo(
-      (document.querySelector('.work') as HTMLElement).offsetTop,
+      (document.querySelector('.work') as HTMLElement).offsetTop + 5,
       500
     );
   };
