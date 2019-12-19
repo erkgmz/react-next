@@ -42,15 +42,21 @@ const projects: ProjectInterface[] = [
     'Shopify',
     'shopify.png',
     ['https://sippysips.com/', 'https://almsbio.com'],
-    "I'm also experienced with building projects on Shopify. This includes custom themes, schemas for content entry, plugin installation, and custom code updates.",
-    ['HTML', 'LIQUID', 'SASS', 'JAVASCRIPT', 'SHOPIFY']
+    "I've built several custom themes and sites using Shopify and have experience integrating third-party apps/plugins.",
+    [
+      'JAVASCRIPT',
+      'LIQUID',
+      'HTML/SASS',
+      '3RD PARTY APPLICATIONS',
+      'INTEGRATIONS'
+    ]
   ),
   new Project(
     'Bulletproof',
     'bp_logo.png',
     ['https://www.bulletproof.com/'],
-    'I had the pleasure of working with the digital marketing team at Bulletproof. We worked on a "Welcome" and "Abandoned Cart" series of custom email templates. FYI - developing responsive UI\'s for email clients is like coding in the 90\'s, remember <table>?! #nerdjoke',
-    ['HTML', 'CSS', 'RESPONSIVE EMAIL TEMPLTATES']
+    'I had the pleasure of working with the digital marketing team at Bulletproof. We worked on a "Welcome" and "Abandoned Cart" series of custom email templates. FYI - developing responsive UI\'s for email clients is like coding in the 90\'s, remember <table>?!',
+    ['HTML', 'CSS', 'MJML', 'RESPONSIVE EMAIL TEMPLATES']
   ),
   new Project(
     'Create Purpose',
