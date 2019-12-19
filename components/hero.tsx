@@ -12,7 +12,7 @@ const Hero: React.FC = () => {
     <div className="hero">
       <div className="hero-wrapper">
         <div className="col col-left">
-          <h1 className="section-headline">Hola!</h1>
+          <h1 className="section-headline">Hello.</h1>
         </div>
         <div className="col col-right copy-block">
           <p>
