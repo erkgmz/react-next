@@ -184,7 +184,6 @@ const Work: React.FC = () => {
             transition: margin 0.5s ease-in-out;
             font-size: 14vw;
             min-width: 50%;
-            /*position: fixed;*/
           }
         }
 
@@ -200,6 +199,7 @@ const Work: React.FC = () => {
             width: 800px;
             max-width: 50%;
             margin-right: 0;
+            padding-top: 30px;
           }
         }
 
