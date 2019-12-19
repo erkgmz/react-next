@@ -83,11 +83,11 @@ const Work: React.FC = () => {
 
   useEffect(() => {
     if (window.innerWidth >= 1024) {
-      window.addEventListener('scroll', handleScroll);
+      window.addEventListener('scroll', lockHeadline);
     }
   }, [isInView]);
 
-  const handleScroll = () => {
+  const lockHeadline = () => {
     const offsetTop = (document.querySelector('.work') as HTMLElement)
       .offsetTop;
     const scrollY = window.scrollY;
