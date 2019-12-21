@@ -187,7 +187,9 @@ const Work: React.FC = () => {
         @media (min-width: 1024px) {
           .section-headline {
             font-size: 160px;
-            transition: margin 0.5s ease-in-out;
+            transition-property: margin;
+            transition-duration: 0.5s;
+            transition-timing-function: ease-in-out;
             font-size: 14vw;
             min-width: 50%;
           }
