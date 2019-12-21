@@ -29,7 +29,7 @@ const Hero: React.FC = () => {
         </div>
         <div className="go-to-work">
           <button onClick={scrollToWork}>
-            <i className="fa fa-angle-down" aria-hidden="true"></i>
+            <i className="down-angle"></i>
           </button>
         </div>
       </div>
@@ -144,24 +144,19 @@ const Hero: React.FC = () => {
         }
 
         .go-to-work button {
-          font-size: 40px;
           background-color: transparent;
           border: none;
-          color: #30323d;
           outline: 0;
           padding: 0;
         }
 
-        @media (min-width: 1024px) {
-          .go-to-work button {
-            font-size: 50px;
-          }
-        }
-
-        @media (min-width: 1400px) {
-          .go-to-work button {
-            font-size: 4vw;
-          }
+        .down-angle {
+          border: solid #30323d;
+          border-width: 0 4px 4px 0;
+          display: inline-block;
+          padding: 8px;
+          padding: 1vw;
+          transform: rotate(45deg);
         }
       `}</style>
     </div>
