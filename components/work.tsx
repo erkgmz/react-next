@@ -130,7 +130,8 @@ const Work: React.FC = () => {
         style={{
           position: isInView ? 'fixed' : 'static',
           marginTop: isInView && 0,
-          top: isInView && 0
+          top: isInView && 0,
+          opacity: isInView && 1
         }}
       >
         Work.
@@ -201,12 +202,13 @@ const Work: React.FC = () => {
         @media (min-width: 1024px) {
           .section-headline {
             font-size: 160px;
-            transition-property: margin;
+            transition-property: margin, opacity;
             transition-duration: 0.5s;
             transition-timing-function: ease-in-out;
             font-size: 14vw;
             min-width: 50%;
             margin-top: 100px;
+            opacity: 0.5;
           }
         }
 
