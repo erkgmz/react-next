@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import useTheme from '../hooks/useTheme';
 
 interface ProjectInterface {
   name: string;
@@ -86,6 +87,7 @@ const createHostName: Function = (link: string) => {
 
 const Work: React.FC = () => {
   const [isInView, setIsInView] = useState(false);
+  const theme = useTheme();
 
   useEffect(() => {
     if (window.innerWidth >= 1024) {
@@ -114,11 +116,11 @@ const Work: React.FC = () => {
     <div className="work">
       <h4
         className="section-headline"
-        style={
-          isInView
-            ? { position: 'fixed', marginTop: 0, top: 0 }
-            : { marginTop: 100 }
-        }
+        style={{
+          position: isInView ? 'fixed' : 'static',
+          marginTop: isInView && 0,
+          top: isInView && 0
+        }}
       >
         Work.
       </h4>
@@ -193,6 +195,7 @@ const Work: React.FC = () => {
             transition-timing-function: ease-in-out;
             font-size: 14vw;
             min-width: 50%;
+            margin-top: 100px;
           }
         }
 
@@ -216,7 +219,7 @@ const Work: React.FC = () => {
           display: inline-block;
           position: relative;
           flex: 1;
-          border-bottom: 2px solid #30323d;
+          border-bottom: 2px solid ${theme === 'light' ? '#30323d' : '#f5f5f5'};
           margin-bottom: 20px;
         }
 
