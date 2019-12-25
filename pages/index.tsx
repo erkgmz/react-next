@@ -1,13 +1,16 @@
 import Layout from '../components/layout';
 import Hero from '../components/hero';
 import Work from '../components/work';
+import { ThemeContextProvider } from '../context/ThemeProvider';
 
 const Home = () => {
   return (
-    <Layout>
-      <Hero />
-      <Work />
-    </Layout>
+    <ThemeContextProvider>
+      <Layout>
+        <Hero />
+        <Work />
+      </Layout>
+    </ThemeContextProvider>
   );
 };
 
