@@ -117,7 +117,7 @@ const Work: React.FC = () => {
         style={
           isInView
             ? { position: 'fixed', marginTop: 0, top: 0 }
-            : { marginTop: 10 }
+            : { marginTop: 100 }
         }
       >
         Work.
@@ -134,7 +134,7 @@ const Work: React.FC = () => {
                 />
               </div>
               <div className="copy-block">
-                <h4 className="headline">{project.name}</h4>
+                <h4 className="headline section-copy">{project.name}</h4>
                 {project.link.map((link: string, key: number) => {
                   return (
                     <a key={`${link}-${key}`} href={link} className="link">
@@ -142,11 +142,13 @@ const Work: React.FC = () => {
                     </a>
                   );
                 })}
-                <p className="description">{project.copy}</p>
-                <h4 style={{ marginBottom: 0 }}>Tools</h4>
+                <p className="section-copy description">{project.copy}</p>
+                <h4 style={{ marginBottom: 0 }} className="section-copy">
+                  Tools
+                </h4>
                 {project.tags.map((tag: string, index: number) => {
                   return (
-                    <span key={`${tag}-${index}`} className="tag">
+                    <span key={`${tag}-${index}`} className="tag section-copy">
                       {tag}
                     </span>
                   );
@@ -172,7 +174,6 @@ const Work: React.FC = () => {
           font-size: 80px;
           margin-bottom: 50px;
           margin-top: 0;
-          color: #30323d;
           max-width: 500px;
           margin: 0 auto;
         }
@@ -249,7 +250,6 @@ const Work: React.FC = () => {
           padding-left: 10px;
           padding-bottom: 40px;
           max-width: 100%;
-          color: #30323d;
         }
 
         @media (min-width: 1024px) {
@@ -275,7 +275,6 @@ const Work: React.FC = () => {
 
         .project .copy-block .headline {
           margin-bottom: 5px;
-          color: #30323d;
         }
 
         @media (min-width: 1024px) {
@@ -304,7 +303,6 @@ const Work: React.FC = () => {
         .project p {
           margin: 0;
           font-size: 14px;
-          color: #30323d;
           letter-spacing: 1px;
           line-height: 1.2;
         }

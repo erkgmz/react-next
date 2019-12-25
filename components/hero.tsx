@@ -1,6 +1,9 @@
 import { smoothScrollTo } from '../utilities/smoothScrollTo';
+import useTheme from '../hooks/useTheme';
 
 const Hero: React.FC = () => {
+  const theme = useTheme();
+
   const scrollToWork = () => {
     smoothScrollTo(
       (document.querySelector('.work') as HTMLElement).offsetTop + 5,
@@ -15,14 +18,14 @@ const Hero: React.FC = () => {
           <h1 className="section-headline">Hello.</h1>
         </div>
         <div className="col col-right copy-block">
-          <p>
+          <p className="section-copy">
             I'm Erik Gomez, a Front-End Developer in Los Angeles, California,
             where I work at <a href="https://www.rpa.com">RPA</a> and am one of
             the lead developers on the{' '}
             <a href="https://automobiles.honda.com">Honda Automobiles</a>{' '}
             project.
           </p>
-          <p>
+          <p className="section-copy">
             Feel free to <a href="mailto:e@erikgomez.co">email</a> me if you
             have any questions.
           </p>
@@ -72,7 +75,6 @@ const Hero: React.FC = () => {
         .hero h1 {
           font-size: 80px;
           margin-bottom: 50px;
-          color: #30323d;
           max-width: 500px;
           margin: 0 auto;
         }
@@ -115,7 +117,6 @@ const Hero: React.FC = () => {
 
         .hero p {
           font-size: 14px;
-          color: #30323d;
           letter-spacing: 1px;
           line-height: 1.2;
         }
@@ -151,7 +152,7 @@ const Hero: React.FC = () => {
         }
 
         .down-angle {
-          border: solid #30323d;
+          border: solid ${theme === 'light' ? '#30323d' : '#f5f5f5'};
           border-width: 0 4px 4px 0;
           display: inline-block;
           padding: 8px;
