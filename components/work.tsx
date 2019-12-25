@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import useTheme from '../hooks/useTheme';
 
 interface ProjectInterface {
@@ -88,6 +88,17 @@ const createHostName: Function = (link: string) => {
 const Work: React.FC = () => {
   const [isInView, setIsInView] = useState(false);
   const [theme] = useTheme();
+  const workRef = useRef();
+
+  // only run once onload
+  useEffect(() => {
+    if (
+      window.scrollY >= (workRef.current as HTMLElement).offsetTop &&
+      window.innerWidth >= 1024
+    ) {
+      lockHeadline();
+    }
+  }, []);
 
   useEffect(() => {
     if (window.innerWidth >= 1024) {
@@ -113,7 +124,7 @@ const Work: React.FC = () => {
   };
 
   return (
-    <div className="work">
+    <div className="work" ref={workRef}>
       <h4
         className="section-headline"
         style={{
