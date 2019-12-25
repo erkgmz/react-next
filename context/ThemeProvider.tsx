@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-export const ThemeContext = React.createContext({});
+export const ThemeContext = React.createContext([{}, () => {}]);
 
 export const ThemeContextProvider = ({ children }) => {
   const [currentHour, setCurrentHour] = useState(new Date().getHours());
@@ -19,6 +19,8 @@ export const ThemeContextProvider = ({ children }) => {
   }, [currentHour, isLightRange]);
 
   return (
-    <ThemeContext.Provider value={theme}>{children}</ThemeContext.Provider>
+    <ThemeContext.Provider value={[theme, setTheme]}>
+      {children}
+    </ThemeContext.Provider>
   );
 };
