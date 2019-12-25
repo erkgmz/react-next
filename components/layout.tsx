@@ -1,10 +1,13 @@
 import Header from './header';
 import Footer from './footer';
 import Head from 'next/head';
+import useTheme from '../hooks/useTheme';
 
 const Layout = props => {
+  const theme = useTheme();
+
   return (
-    <>
+    <div className={`layout ${theme}`}>
       <Head>
         <title>Erik Gomez - Front-End Developer - Los Angeles, CA</title>
         <link
@@ -17,7 +20,7 @@ const Layout = props => {
       <Footer />
       <style jsx>{`
         :global(body) {
-          background-color: #f5f5f5;
+          background-color: ${theme === 'light' ? '#f5f5f5' : '#30323d'};
           scroll-behavior: smooth;
           font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir,
             Helvetica, sans-serif;
@@ -29,8 +32,14 @@ const Layout = props => {
         :global(button) {
           cursor: pointer;
         }
+        :global(.section-headline) {
+          color: ${theme === 'light' ? '#30323d' : '#f5f5f5'};
+        }
+        :global(.section-copy) {
+          color: ${theme === 'light' ? '#30323d' : '#f5f5f5'};
+        }
       `}</style>
-    </>
+    </div>
   );
 };
 
