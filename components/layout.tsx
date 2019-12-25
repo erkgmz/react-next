@@ -9,6 +9,23 @@ const Layout = props => {
   return (
     <div className={`layout ${theme}`}>
       <Head>
+        {process.env.NODE_ENV !== 'development' && (
+          <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=UA-90990854-1"
+          ></script>
+        )}
+        {process.env.NODE_ENV !== 'development' && (
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `window.dataLayer = window.dataLayer || []; 
+              function gtag() {
+                window.dataLayer.push(arguments)
+              }
+              gtag('js', new Date()); gtag('config', 'UA-90990854-1');`
+            }}
+          />
+        )}
         <title>Erik Gomez - Front-End Developer - Los Angeles, CA</title>
         <link
           rel="stylesheet"
