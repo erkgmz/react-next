@@ -87,7 +87,7 @@ const createHostName: Function = (link: string) => {
 
 const Work: React.FC = () => {
   const [isInView, setIsInView] = useState(false);
-  const theme = useTheme();
+  const [theme] = useTheme();
 
   useEffect(() => {
     if (window.innerWidth >= 1024) {

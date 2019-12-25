@@ -4,7 +4,7 @@ import Head from 'next/head';
 import useTheme from '../hooks/useTheme';
 
 const Layout = props => {
-  const theme = useTheme();
+  const [theme] = useTheme();
 
   return (
     <div className={`layout ${theme}`}>

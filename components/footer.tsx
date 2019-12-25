@@ -1,6 +1,13 @@
+import useTheme from '../hooks/useTheme';
 const Footer = () => {
+  const [theme, setTheme] = useTheme();
+
+  const handleThemeChange = () => {
+    (setTheme as Function)(theme === 'light' ? 'dark' : 'light');
+  };
+
   return (
-    <footer className="footer">
+    <footer className="footer" id="footer">
       <ul className="footer-links">
         <li className="link">
           <a href="//www.linkedin.com/in/erkgmz/">LinkedIn</a>
@@ -9,6 +16,11 @@ const Footer = () => {
           <a href="/resume.pdf" download>
             Download Resume
           </a>
+        </li>
+        <li className="link">
+          <button onClick={handleThemeChange}>
+            {theme === 'light' ? 'Dark' : 'Light'} Theme
+          </button>
         </li>
       </ul>
 
@@ -27,7 +39,7 @@ const Footer = () => {
         footer ul {
           display: flex;
           flex-flow: column nowrap;
-          max-width: 500px;
+          max-width: 800px;
           margin: 0 auto;
           padding: 20px 0 40px;
         }
@@ -51,8 +63,16 @@ const Footer = () => {
           }
         }
 
-        footer ul li a {
+        footer ul li a,
+        footer ul li button {
           color: white;
+          text-decoration: underline;
+        }
+
+        footer ul li button {
+          background: none;
+          border: none;
+          outline: 0;
         }
 
         .copyright {

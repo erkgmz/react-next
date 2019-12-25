@@ -2,7 +2,7 @@ import { smoothScrollTo } from '../utilities/smoothScrollTo';
 import useTheme from '../hooks/useTheme';
 
 const Hero: React.FC = () => {
-  const theme = useTheme();
+  const [theme] = useTheme();
 
   const scrollToWork = () => {
     smoothScrollTo(
