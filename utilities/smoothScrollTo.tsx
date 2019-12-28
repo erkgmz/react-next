@@ -1,5 +1,5 @@
-export const smoothScrollTo = (scrollTo: number, scrollDuration: number) => {
-  const cosParameter = (window.pageYOffset - scrollTo) / 2;
+export const smoothScrollTo = (yAxis: number, scrollDuration: number) => {
+  const cosParameter = (window.pageYOffset - yAxis) / 2;
   let scrollCount = 0;
   let oldTimestamp = window.performance.now();
 
@@ -11,14 +11,14 @@ export const smoothScrollTo = (scrollTo: number, scrollDuration: number) => {
     if (scrollCount >= Math.PI) return;
     window.scrollTo(
       0,
-      scrollTo + cosParameter + cosParameter * Math.cos(scrollCount)
+      yAxis + cosParameter + cosParameter * Math.cos(scrollCount)
     );
     oldTimestamp = newTimestamp;
     window.requestAnimationFrame(step);
   }
 
   if ('scrollBehavior' in document.documentElement.style) {
-    window.scrollTo({ behavior: 'smooth', left: 0, top: scrollTo });
+    window.scrollTo({ behavior: 'smooth', left: 0, top: yAxis });
   } else {
     window.requestAnimationFrame(step);
   }
