@@ -2,6 +2,7 @@ import Header from './header';
 import Footer from './footer';
 import Head from 'next/head';
 import useTheme from '../hooks/useTheme';
+import { COLORS } from '../constants/colors';
 
 const Layout = props => {
   const [theme] = useTheme();
@@ -37,7 +38,7 @@ const Layout = props => {
       <Footer />
       <style jsx>{`
         :global(body) {
-          background-color: ${theme === 'light' ? '#f5f5f5' : '#30323d'};
+          background-color: ${theme === 'light' ? COLORS.WHITE : COLORS.BLACK};
           scroll-behavior: smooth;
           font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir,
             Helvetica, sans-serif;
@@ -50,10 +51,10 @@ const Layout = props => {
           cursor: pointer;
         }
         :global(.section-headline) {
-          color: ${theme === 'light' ? '#30323d' : '#f5f5f5'};
+          color: ${theme === 'light' ? COLORS.BLACK : COLORS.WHITE};
         }
         :global(.section-copy) {
-          color: ${theme === 'light' ? '#30323d' : '#f5f5f5'};
+          color: ${theme === 'light' ? COLORS.BLACK : COLORS.WHITE};
         }
       `}</style>
     </div>

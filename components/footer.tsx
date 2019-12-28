@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import useTheme from '../hooks/useTheme';
 import { useState, useEffect } from 'react';
+import { COLORS } from '../constants/colors';
 
 const Footer = () => {
   const [theme, setTheme] = useTheme();
@@ -45,7 +46,7 @@ const Footer = () => {
       <style jsx>{`
         footer {
           box-sizing: border-box;
-          background-color: #4464ad;
+          background-color: ${COLORS.BGBLUE};
           color: white;
           padding: 10px;
           text-align: center;

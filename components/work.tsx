@@ -115,9 +115,11 @@ const Work: React.FC = () => {
       setIsInView(false);
       return;
     }
+
     if (scrollY >= offsetTop) {
       setIsInView(true);
     }
+
     if (scrollY <= offsetTop && isInView) {
       setIsInView(false);
     }
