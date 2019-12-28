@@ -9,7 +9,6 @@ const Home = () => {
     <ThemeContextProvider>
       <Layout>
         <Hero />
-        <Blog />
         <Work />
       </Layout>
     </ThemeContextProvider>
