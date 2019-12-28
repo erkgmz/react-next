@@ -1,6 +1,14 @@
+import Link from 'next/link';
 import useTheme from '../hooks/useTheme';
+import { useState, useEffect } from 'react';
+
 const Footer = () => {
   const [theme, setTheme] = useTheme();
+  const [pathName, setPathName] = useState('/');
+
+  useEffect(() => {
+    setPathName(window.location.pathname);
+  }, [pathName]);
 
   const handleThemeChange = () => {
     (setTheme as Function)(theme === 'light' ? 'dark' : 'light');
@@ -9,6 +17,13 @@ const Footer = () => {
   return (
     <footer className="footer" id="footer">
       <ul className="footer-links">
+        {pathName !== '/' && (
+          <li className="link">
+            <Link href="/">
+              <a>Home</a>
+            </Link>
+          </li>
+        )}
         <li className="link">
           <a href="//www.linkedin.com/in/erkgmz/">LinkedIn</a>
         </li>
