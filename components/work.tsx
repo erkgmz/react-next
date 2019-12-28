@@ -107,8 +107,9 @@ const Work: React.FC = () => {
   }, [isInView]);
 
   const lockHeadline = () => {
-    const offsetTop = (document.querySelector('.work') as HTMLElement)
-      .offsetTop;
+    if (!workRef.current) return;
+
+    const offsetTop = (workRef.current as HTMLElement).offsetTop;
     const scrollY = window.scrollY;
 
     if (window.innerWidth < 1024) {
