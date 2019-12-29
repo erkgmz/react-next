@@ -1,7 +1,29 @@
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
+
 const Header = () => {
+  const [pathName, setPathName] = useState('/');
+  useEffect(() => {
+    setPathName(location.pathname);
+  }, []);
+
   return (
     <nav>
       <ul>
+        {pathName !== '/' && (
+          <li>
+            <Link href="/">
+              <a>Home</a>
+            </Link>
+          </li>
+        )}
+        {pathName !== '/blog' && (
+          <li>
+            <Link href="/blog">
+              <a>Blog</a>
+            </Link>
+          </li>
+        )}
         <li>
           <a href="//www.linkedin.com/in/erkgmz/">LinkedIn</a>
         </li>
@@ -26,6 +48,8 @@ const Header = () => {
         }
         a {
           font-size: 13px;
+          font-weight: 700;
+          letter-spacing: 1px;
         }
       `}</style>
     </nav>
