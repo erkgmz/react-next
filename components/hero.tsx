@@ -93,6 +93,7 @@ const Hero: React.FC = () => {
           flex-flow: column;
           position: relative;
           box-sizing: border-box;
+          padding: 0 10px;
         }
 
         @media (min-width: 1024px) {
