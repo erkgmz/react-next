@@ -19,9 +19,16 @@ const Footer = () => {
     <footer className="footer" id="footer">
       <ul className="footer-links">
         {pathName !== '/' && (
-          <li className="link">
+          <li>
             <Link href="/">
               <a>Home</a>
+            </Link>
+          </li>
+        )}
+        {pathName !== '/blog' && (
+          <li>
+            <Link href="/blog">
+              <a>Blog</a>
             </Link>
           </li>
         )}
