@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
 import useTheme from '../hooks/useTheme';
+import { COLORS } from '../constants/colors';
 
 interface ProjectInterface {
   name: string;
@@ -305,7 +306,7 @@ const Work: React.FC = () => {
         .project .copy-block .link {
           display: inline-block;
           padding: 4px 8px;
-          background-color: #d4af37;
+          background-color: ${COLORS.GOLD};
           color: white;
           font-size: 10px;
           margin-bottom: 5px;
