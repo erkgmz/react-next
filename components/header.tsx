@@ -17,16 +17,19 @@ const Header = () => {
           justify-content: flex-end;
           box-sizing: border-box;
         }
+
         nav > ul {
           padding: 4px 16px;
         }
+
         li {
           display: flex;
           padding: 6px 10px;
-        }
-        a {
-          font-size: 13px;
           font-weight: 700;
+        }
+
+        li a {
+          font-size: 13px;
           letter-spacing: 1px;
         }
       `}</style>
