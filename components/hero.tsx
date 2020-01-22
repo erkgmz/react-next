@@ -1,71 +1,16 @@
 import { smoothScrollTo } from '../utilities/smoothScrollTo';
-import { COLORS } from '../constants/colors';
-import Link from 'next/link';
+import useTheme from '../hooks/useTheme';
 
-const HeroButtons = () => {
-  const DURATION = 500;
+const Hero: React.FC = () => {
+  const [theme] = useTheme();
+
   const scrollToWork = () => {
     smoothScrollTo(
       (document.querySelector('.work') as HTMLElement).offsetTop + 5,
-      DURATION
+      500
     );
   };
 
-  return (
-    <div className="hero-btns">
-      <Link href="/blog">
-        <a className="hero-btn">BLOG</a>
-      </Link>
-      <button className="hero-btn" onClick={scrollToWork}>
-        WORK
-      </button>
-      <style jsx>{`
-        .hero-btns {
-          margin: 40px auto 0;
-          text-align: center;
-          display: flex;
-          flex-flow: row nowrap;
-          padding-bottom: 100px;
-        }
-
-        @media (min-width: 768px) {
-          .hero-btn {
-            /*width: 100%;*/
-            flex: 1;
-            text-align: left;
-          }
-        }
-
-        .hero-btn {
-          display: inline-block;
-          background-color: transparent;
-          border: none;
-          outline: 0;
-          padding: 0;
-          margin-right: 20px;
-          color: ${COLORS.LINKBLUE};
-          text-decoration: underline;
-          font-size: 14px;
-          font-weight: 700;
-        }
-
-        @media (min-width: 1024px) {
-          .hero-btn {
-            font-size: 16px;
-          }
-        }
-
-        @media (min-width: 1400px) {
-          .hero-btn {
-            font-size: 1.5vw;
-          }
-        }
-      `}</style>
-    </div>
-  );
-};
-
-const Hero: React.FC = () => {
   return (
     <div className="hero">
       <div className="hero-wrapper">
@@ -85,14 +30,19 @@ const Hero: React.FC = () => {
             have any questions.
           </p>
         </div>
+        <div className="go-to-work">
+          <button onClick={scrollToWork}>
+            <i className="down-angle"></i>
+          </button>
+        </div>
       </div>
       <style jsx>{`
         .hero {
           display: flex;
           flex-flow: column;
+          padding: 0 10px 100px;
           position: relative;
           box-sizing: border-box;
-          padding: 0 10px;
         }
 
         @media (min-width: 1024px) {
@@ -181,6 +131,33 @@ const Hero: React.FC = () => {
           .hero p {
             font-size: 1.5vw;
           }
+        }
+
+        .go-to-work {
+          margin: 100px auto 0;
+          text-align: center;
+        }
+
+        @media (min-width: 768px) {
+          .go-to-work {
+            width: 100%;
+          }
+        }
+
+        .go-to-work button {
+          background-color: transparent;
+          border: none;
+          outline: 0;
+          padding: 0;
+        }
+
+        .down-angle {
+          border: solid ${theme === 'light' ? '#30323d' : '#f5f5f5'};
+          border-width: 0 4px 4px 0;
+          display: inline-block;
+          padding: 8px;
+          padding: 1vw;
+          transform: rotate(45deg);
         }
       `}</style>
     </div>
