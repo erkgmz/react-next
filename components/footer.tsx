@@ -4,11 +4,6 @@ import { COLORS } from '../constants/colors';
 
 const Footer = () => {
   const [theme, setTheme] = useTheme();
-  const [pathName, setPathName] = useState('/');
-
-  useEffect(() => {
-    setPathName(window.location.pathname);
-  }, [pathName]);
 
   const handleThemeChange = () => {
     (setTheme as Function)(theme === 'light' ? 'dark' : 'light');
