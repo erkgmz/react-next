@@ -84,7 +84,6 @@ const Hero: React.FC = () => {
             Feel free to <a href="mailto:e@erikgomez.co">email</a> me if you
             have any questions.
           </p>
-          <HeroButtons />
         </div>
       </div>
       <style jsx>{`
