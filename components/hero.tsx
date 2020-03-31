@@ -9,7 +9,7 @@ const Hero: React.FC = () => {
 
   useEffect(() => {
     setAngleColor(theme === 'light' ? COLORS.BLACK : COLORS.WHITE);
-  }, []);
+  }, [theme]);
 
   const scrollToWork = () => {
     smoothScrollTo(
