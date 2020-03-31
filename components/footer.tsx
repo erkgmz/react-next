@@ -1,5 +1,4 @@
 import useTheme from '../hooks/useTheme';
-import { useState, useEffect } from 'react';
 import { COLORS } from '../constants/colors';
 
 const Footer = () => {

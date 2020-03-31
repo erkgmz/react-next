@@ -1,8 +1,15 @@
 import { smoothScrollTo } from '../utilities/smoothScrollTo';
 import useTheme from '../hooks/useTheme';
+import { COLORS } from '../constants/colors';
+import { useEffect, useState } from 'react';
 
 const Hero: React.FC = () => {
   const [theme] = useTheme();
+  const [angleColor, setAngleColor] = useState(COLORS.WHITE);
+
+  useEffect(() => {
+    setAngleColor(theme === 'light' ? COLORS.BLACK : COLORS.WHITE);
+  }, []);
 
   const scrollToWork = () => {
     smoothScrollTo(
@@ -152,7 +159,7 @@ const Hero: React.FC = () => {
         }
 
         .down-angle {
-          border: solid ${theme === 'light' ? '#30323d' : '#f5f5f5'};
+          border: solid ${angleColor};
           border-width: 0 4px 4px 0;
           display: inline-block;
           padding: 8px;
