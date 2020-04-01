@@ -194,6 +194,7 @@ const Work: React.FC = () => {
           margin-top: 0;
           max-width: 500px;
           margin: 0 auto;
+          font-weight: 900;
         }
 
         @media (min-width: 768px) {
@@ -209,7 +210,7 @@ const Work: React.FC = () => {
             transition-property: margin, opacity;
             transition-duration: 0.5s;
             transition-timing-function: ease-in-out;
-            font-size: 14vw;
+            font-size: 13vw;
             min-width: 50%;
             margin-top: 100px;
             opacity: 0.5;

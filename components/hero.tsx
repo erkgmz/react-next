@@ -84,6 +84,7 @@ const Hero: React.FC = () => {
           margin-bottom: 50px;
           max-width: 500px;
           margin: 0 auto;
+          font-weight: 900;
         }
 
         @media (min-width: 768px) {
@@ -95,7 +96,7 @@ const Hero: React.FC = () => {
         @media (min-width: 1024px) {
           .hero h1 {
             font-size: 160px;
-            font-size: 14vw;
+            font-size: 13vw;
             margin-left: 0;
           }
         }
