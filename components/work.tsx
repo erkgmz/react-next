@@ -208,12 +208,12 @@ const Work: React.FC = () => {
           .section-headline {
             font-size: 160px;
             transition-property: margin, opacity;
-            transition-duration: 0.5s;
-            transition-timing-function: ease-in-out;
+            transition-duration: 0.2s;
+            transition-timing-function: linear;
             font-size: 13vw;
             min-width: 50%;
             margin-top: 100px;
-            opacity: 0.5;
+            opacity: 0.7;
           }
         }
 
