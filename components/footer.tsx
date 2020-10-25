@@ -14,11 +14,11 @@ const Footer = () => {
         <li className="link">
           <a href="//www.linkedin.com/in/erkgmz/">LinkedIn</a>
         </li>
-        <li className="link">
+        {/* <li className="link">
           <a href="/resume.pdf" download>
             Download Resume
           </a>
-        </li>
+        </li> */}
         <li className="link">
           <button onClick={handleThemeChange}>
             {theme === 'light' ? 'Dark' : 'Light'} Theme
@@ -66,6 +66,7 @@ const Footer = () => {
         footer ul li button {
           color: white;
           text-decoration: underline;
+          font-size: 14px;
         }
 
         footer ul li button {

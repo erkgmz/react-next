@@ -1,75 +1,48 @@
-import { smoothScrollTo } from '../utilities/smoothScrollTo';
 import useTheme from '../hooks/useTheme';
 import { COLORS } from '../constants/colors';
 import { useEffect, useState } from 'react';
 
 const Hero: React.FC = () => {
   const [theme] = useTheme();
-  const [angleColor, setAngleColor] = useState(COLORS.WHITE);
+  const [, setAngleColor] = useState(COLORS.WHITE);
 
   useEffect(() => {
-    setAngleColor(theme === 'light' ? COLORS.BLACK : COLORS.WHITE);
+    const color = theme === 'light' ? COLORS.BLACK : COLORS.WHITE;
+    setAngleColor(color);
   }, [theme]);
-
-  const scrollToWork = () => {
-    smoothScrollTo(
-      (document.querySelector('.work') as HTMLElement).offsetTop + 5,
-      500
-    );
-  };
 
   return (
     <div className="hero">
       <div className="hero-wrapper">
-        <div className="col col-left">
-          <h1 className="section-headline">Hello.</h1>
-        </div>
-        <div className="col col-right copy-block">
-          <p className="section-copy">
-            I'm Erik Gomez, a Front-End Developer in Los Angeles, California,
-            where I work at <a href="https://www.rpa.com">RPA</a> and am one of
-            the lead developers on the{' '}
-            <a href="https://automobiles.honda.com">Honda Automobiles</a>{' '}
-            project.
-          </p>
-          <p className="section-copy">
-            Feel free to <a href="mailto:e@erikgomez.co">email</a> me if you
-            have any questions.
-          </p>
-        </div>
-        <div className="go-to-work">
-          <button onClick={scrollToWork}>
-            <i className="down-angle"></i>
-          </button>
-        </div>
+        <h1 className="gb__color">Hello, I'm Erik.</h1>
+        <h2 className="gb__color">
+          Front-End Engineer @ <a href="https://ring.com">Ring.com</a>.
+        </h2>
+        <p className="gb__color city">Los Angeles, CA.</p>
+        <p className="gb__color">
+          🚧 My site is currently under construction. In the meantime, you can
+          hit me up on <a href="//www.linkedin.com/in/erkgmz/">LinkedIn</a>.
+        </p>
       </div>
       <style jsx>{`
         .hero {
           display: flex;
           flex-flow: column;
-          padding: 0 10px 100px;
+          padding: 0 10px;
           position: relative;
           box-sizing: border-box;
+          min-height: 640px;
+          height: 100vh;
         }
 
         @media (min-width: 1024px) {
           .hero {
             padding: 0 100px;
-            height: 95vh;
           }
         }
 
         .hero-wrapper {
           margin: auto;
-          margin-top: 120px;
-          max-width: 500px;
-        }
-
-        @media (min-width: 768px) {
-          .hero-wrapper {
-            display: flex;
-            flex-flow: row wrap;
-          }
         }
 
         @media (min-width: 1024px) {
@@ -80,9 +53,7 @@ const Hero: React.FC = () => {
         }
 
         .hero h1 {
-          font-size: 80px;
-          margin-bottom: 50px;
-          max-width: 500px;
+          font-size: 50px;
           margin: 0 auto;
           font-weight: 900;
         }
@@ -90,36 +61,26 @@ const Hero: React.FC = () => {
         @media (min-width: 768px) {
           .hero h1 {
             font-size: 100px;
+            font-size: 9vw;
           }
         }
 
         @media (min-width: 1024px) {
           .hero h1 {
-            font-size: 160px;
-            font-size: 13vw;
             margin-left: 0;
           }
         }
 
-        .hero .copy-block {
-          padding-left: 10px;
-          max-width: 500px;
-        }
-
-        .hero .copy-block a {
-          font-weight: 700;
+        .hero h2 {
+          font-size: 18px;
+          margin: 0;
         }
 
         @media (min-width: 1024px) {
-          .hero .col-left {
-            flex: 1;
-          }
-
-          .hero .copy-block {
-            width: 800px;
-            max-width: 50%;
-            padding-left: 20px;
-            flex: 1;
+          .hero h2 {
+            font-size: 160px;
+            font-size: 2vw;
+            margin-left: 0;
           }
         }
 
@@ -132,6 +93,7 @@ const Hero: React.FC = () => {
         @media (min-width: 1024px) {
           .hero p {
             font-size: 16px;
+            font-size: 1.2vw;
           }
         }
 
@@ -139,33 +101,6 @@ const Hero: React.FC = () => {
           .hero p {
             font-size: 1.5vw;
           }
-        }
-
-        .go-to-work {
-          margin: 100px auto 0;
-          text-align: center;
-        }
-
-        @media (min-width: 768px) {
-          .go-to-work {
-            width: 100%;
-          }
-        }
-
-        .go-to-work button {
-          background-color: transparent;
-          border: none;
-          outline: 0;
-          padding: 0;
-        }
-
-        .down-angle {
-          border: solid ${angleColor};
-          border-width: 0 4px 4px 0;
-          display: inline-block;
-          padding: 8px;
-          padding: 1vw;
-          transform: rotate(45deg);
         }
       `}</style>
     </div>

@@ -3,8 +3,9 @@ import Footer from './footer';
 import Head from 'next/head';
 import useTheme from '../hooks/useTheme';
 import { COLORS } from '../constants/colors';
+import { ReactNode } from 'react';
 
-const Layout = props => {
+const Layout = (props: { children: ReactNode }) => {
   const [theme] = useTheme();
 
   return (
@@ -19,15 +20,17 @@ const Layout = props => {
         {process.env.NODE_ENV !== 'development' && (
           <script
             dangerouslySetInnerHTML={{
-              __html: `window.dataLayer = window.dataLayer || []; 
-              function gtag() {
-                window.dataLayer.push(arguments)
-              }
-              gtag('js', new Date()); gtag('config', 'UA-90990854-1');`
+              __html: `
+                window.dataLayer = window.dataLayer || []; 
+                function gtag() {
+                  window.dataLayer.push(arguments)
+                }
+                gtag('js', new Date()); gtag('config', 'UA-90990854-1');
+              `,
             }}
           />
         )}
-        <title>Erik Gomez - Front-End Developer - Los Angeles, CA</title>
+        <title>Erik Gomez - Front-End Engineer - Los Angeles, CA</title>
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
@@ -44,16 +47,13 @@ const Layout = props => {
             Helvetica, sans-serif;
         }
         :global(a) {
-          color: #067df7;
+          color: ${COLORS.LINK_BLUE};
           cursor: pointer;
         }
         :global(button) {
           cursor: pointer;
         }
-        :global(.section-headline) {
-          color: ${theme === 'light' ? COLORS.BLACK : COLORS.WHITE};
-        }
-        :global(.section-copy) {
+        :global(.gb__color) {
           color: ${theme === 'light' ? COLORS.BLACK : COLORS.WHITE};
         }
       `}</style>

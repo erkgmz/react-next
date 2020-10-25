@@ -151,7 +151,7 @@ const Work: React.FC = () => {
                   alt="Brand logo"
                 />
               </div>
-              <div className="copy-block">
+              {/* <div className="copy-block">
                 <h4 className="headline section-copy">{project.name}</h4>
                 {project.link.map((link: string, key: number) => {
                   return (
@@ -171,7 +171,7 @@ const Work: React.FC = () => {
                     </span>
                   );
                 })}
-              </div>
+              </div> */}
             </div>
           );
         })}
