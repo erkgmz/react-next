@@ -32,7 +32,7 @@ const Hero: React.FC = () => {
           position: relative;
           box-sizing: border-box;
           min-height: 640px;
-          height: 100vh;
+          height: 87vh;
         }
 
         @media (min-width: 1024px) {
