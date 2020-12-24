@@ -29,7 +29,7 @@ const Footer = () => {
       <style jsx>{`
         footer {
           box-sizing: border-box;
-          background-color: ${COLORS.BGBLUE};
+          background-color: ${COLORS.FOOTER_BG_COLOR};
           color: white;
           padding: 10px;
           text-align: center;

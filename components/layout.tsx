@@ -47,7 +47,7 @@ const Layout = (props: { children: ReactNode }) => {
             Helvetica, sans-serif;
         }
         :global(a) {
-          color: ${COLORS.LINK_BLUE};
+          color: ${theme === 'light' ? COLORS.LINK_BLUE_ON_LIGHT : COLORS.LINK_BLUE_ON_DARK};
           cursor: pointer;
           font-weight: 700;
         }

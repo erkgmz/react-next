@@ -1,7 +1,8 @@
 export const COLORS = {
-  BLACK: '#30323d',
-  BGBLUE: '#4464ad',
-  LINK_BLUE: '#067df7',
-  WHITE: '#F5F5F5',
+  BLACK: '#15161E',
+  FOOTER_BG_COLOR: '#0C5B97',
+  LINK_BLUE_ON_LIGHT: '#0C5B97',
+  LINK_BLUE_ON_DARK: '#5AAEF6',
+  WHITE: '#FFFFFF',
   GOLD: '#D4AF37',
 };
