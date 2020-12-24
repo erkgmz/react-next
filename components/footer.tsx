@@ -25,7 +25,7 @@ const Footer = () => {
           </button>
         </li>
       </ul>
-      <p className="copyright">&copy; 2020 Erik Gomez All Right Reserved</p>
+      <p className="copyright">&copy; 2020 Erik Gomez All Rights Reserved.</p>
       <style jsx>{`
         footer {
           box-sizing: border-box;
