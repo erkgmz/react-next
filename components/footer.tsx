@@ -1,7 +1,7 @@
 import useTheme from '../hooks/useTheme';
 import { COLORS } from '../constants/colors';
 
-const Footer = () => {
+const Footer = (): JSX.Element => {
   const [theme, setTheme] = useTheme();
 
   const handleThemeChange = () => {

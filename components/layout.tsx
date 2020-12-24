@@ -9,7 +9,10 @@ const Layout = (props: { children: ReactNode }) => {
   const [theme] = useTheme();
 
   return (
-    <div className={`layout ${theme}`}>
+    <div 
+      className={`layout`}
+      style={{backgroundColor: `${theme === 'light' ? COLORS.WHITE : COLORS.BLACK}`}}
+      >
       <Head>
         {process.env.NODE_ENV !== 'development' && (
           <script
@@ -40,20 +43,21 @@ const Layout = (props: { children: ReactNode }) => {
       {props.children}
       <Footer />
       <style jsx>{`
-        :global(body) {
-          background-color: ${theme === 'light' ? COLORS.WHITE : COLORS.BLACK};
+        :global(.layout) {
           scroll-behavior: smooth;
           font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir,
             Helvetica, sans-serif;
+          transition-property: background-color;
+          transition-duration: 0.2s;
+          transition-timing-function: ease-in;
         }
-        :global(a) {
+        :global(a, button) {
           color: ${theme === 'light' ? COLORS.LINK_BLUE_ON_LIGHT : COLORS.LINK_BLUE_ON_DARK};
           cursor: pointer;
           font-weight: 700;
-        }
-        :global(button) {
-          cursor: pointer;
-          font-weight: 700;
+          transition-property: color;
+          transition-duration: 0.2s;
+          transition-timing-function: ease-in;
         }
         :global(.gb__color) {
           color: ${theme === 'light' ? COLORS.BLACK : COLORS.WHITE};
