@@ -44,9 +44,6 @@ const Header = (): JSX.Element => {
           display: flex;
           justify-content: flex-end;
           box-sizing: border-box;
-          position: fixed;
-          left: 0;
-          right: 0;
         }
 
         @media (min-width: 1024px) {

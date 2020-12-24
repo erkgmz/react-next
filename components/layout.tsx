@@ -49,9 +49,11 @@ const Layout = (props: { children: ReactNode }) => {
         :global(a) {
           color: ${COLORS.LINK_BLUE};
           cursor: pointer;
+          font-weight: 700;
         }
         :global(button) {
           cursor: pointer;
+          font-weight: 700;
         }
         :global(.gb__color) {
           color: ${theme === 'light' ? COLORS.BLACK : COLORS.WHITE};

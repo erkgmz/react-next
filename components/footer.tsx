@@ -72,7 +72,6 @@ const Footer = () => {
         footer ul li button {
           background: none;
           border: none;
-          outline: 0;
         }
 
         .copyright {
