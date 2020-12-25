@@ -2,7 +2,7 @@ import Head from 'next/head';
 
 const _Head = (): JSX.Element => (
   <Head>
-    {process.env.NODE_ENV !== 'production' && (
+    {process.env.NODE_ENV === 'production' && (
       <script
         async
         src="https://www.googletagmanager.com/gtag/js?id=UA-90990854-1"

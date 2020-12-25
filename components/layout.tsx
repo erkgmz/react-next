@@ -41,9 +41,6 @@ const Layout = (props: { children: ReactNode }) => {
           transition-duration: 0.2s;
           transition-timing-function: ease-in;
         }
-        :global(.gb__color) {
-          color: ${theme === 'light' ? COLORS.BLACK : COLORS.WHITE};
-        }
       `}</style>
     </div>
   );
