@@ -2,10 +2,10 @@ import { COLORS } from '../constants/colors';
 import useTheme from '../hooks/useTheme';
 
 const Hero = (): JSX.Element => {
-  const [theme] = useTheme();
+  const [theme, setTheme] = useTheme();
 
   return (
-    <div className="hero">
+    <div className={`hero ${theme}`}>
       <div className="hero-wrapper">
         <h1>Hello, I'm Erik.</h1>
         <h2>
@@ -26,13 +26,19 @@ const Hero = (): JSX.Element => {
           box-sizing: border-box;
           min-height: 640px;
           height: 87vh;
-          color: ${theme === 'dark' ? COLORS.WHITE : COLORS.BLACK};
+          color: ${COLORS.BLACK};
+        }
+
+        .hero.dark {
+          color: ${COLORS.WHITE};
         }
 
         .hero a {
-          color: ${theme === 'light'
-            ? COLORS.LINK_BLUE_ON_LIGHT
-            : COLORS.LINK_BLUE_ON_DARK};
+          color: ${COLORS.LINK_BLUE_ON_LIGHT};
+        }
+
+        .hero.dark a {
+          color: ${COLORS.LINK_BLUE_ON_DARK};
         }
 
         @media (min-width: 1024px) {
