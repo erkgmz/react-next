@@ -9,18 +9,13 @@ const Layout = (props: { children: ReactNode }) => {
   const [theme] = useTheme();
 
   return (
-    <div
-      className={`layout`}
-      style={{
-        backgroundColor: `${theme === 'light' ? COLORS.WHITE : COLORS.BLACK}`,
-      }}
-    >
+    <div className={`layout`}>
       <Head />
       <Header />
       {props.children}
       <Footer />
       <style jsx>{`
-        :global(html, body) {
+        :global(html, body, .layout) {
           background-color: ${theme === 'light' ? COLORS.WHITE : COLORS.BLACK};
         }
         :global(.layout) {
@@ -32,9 +27,6 @@ const Layout = (props: { children: ReactNode }) => {
           transition-timing-function: ease-in;
         }
         :global(a, button) {
-          color: ${theme === 'light'
-            ? COLORS.LINK_BLUE_ON_LIGHT
-            : COLORS.LINK_BLUE_ON_DARK};
           cursor: pointer;
           font-weight: 700;
           transition-property: color;

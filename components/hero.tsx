@@ -29,6 +29,12 @@ const Hero = (): JSX.Element => {
           color: ${theme === 'dark' ? COLORS.WHITE : COLORS.BLACK};
         }
 
+        .hero a {
+          color: ${theme === 'light'
+            ? COLORS.LINK_BLUE_ON_LIGHT
+            : COLORS.LINK_BLUE_ON_DARK};
+        }
+
         @media (min-width: 1024px) {
           .hero {
             padding: 0 100px;
