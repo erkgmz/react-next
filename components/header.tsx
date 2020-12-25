@@ -32,6 +32,7 @@ const Header = (): JSX.Element => {
 
           li {
             font-weight: 700;
+            list-style: none;
           }
 
           li a {
