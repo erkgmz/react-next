@@ -5,7 +5,7 @@ export const ThemeContext = React.createContext([{}, () => {}]);
 export const ThemeContextProvider = (props: { children: ReactNode }) => {
   const [currentHour, setCurrentHour] = useState(new Date().getHours());
   const isLightRange = currentHour >= 7 && currentHour <= 18;
-  const [theme, setTheme] = useState(isLightRange ? 'light' : 'dark');
+  const [theme, setTheme] = useState('light');
 
   useEffect(() => {
     // initial theme set
