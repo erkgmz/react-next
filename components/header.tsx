@@ -2,7 +2,7 @@ import { COLORS } from '../constants/colors';
 import useTheme from '../hooks/useTheme';
 
 const Header = (): JSX.Element => {
-  const [theme, setTheme] = useTheme();
+  const [theme] = useTheme();
 
   return (
     <header>

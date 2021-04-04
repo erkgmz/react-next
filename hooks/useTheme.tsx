@@ -1,7 +1,7 @@
-import { ThemeContext } from '../context/ThemeProvider';
+import { IThemeSetter, ThemeContext } from '../context/ThemeProvider';
 import { useContext } from 'react';
 
-const useTheme = () => {
+const useTheme = (): IThemeSetter => {
   const [theme, setTheme] = useContext(ThemeContext);
   return [theme, setTheme];
 };

@@ -5,7 +5,7 @@ const Footer = (): JSX.Element => {
   const [theme, setTheme] = useTheme();
 
   const handleThemeChange = () => {
-    (setTheme as Function)(theme === 'light' ? 'dark' : 'light');
+    setTheme(theme === 'light' ? 'dark' : 'light');
   };
 
   return (

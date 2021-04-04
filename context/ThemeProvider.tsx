@@ -1,11 +1,24 @@
-import React, { useState, useEffect, ReactNode } from 'react';
+import React, {
+  useState,
+  useEffect,
+  ReactNode,
+  Dispatch,
+  SetStateAction,
+} from 'react';
 
-export const ThemeContext = React.createContext([{}, () => {}]);
+const TEN_MINUTES = 600000;
+
+export type IThemeSetter = [
+  'light' | 'dark',
+  Dispatch<SetStateAction<'light' | 'dark'>>
+];
+
+export const ThemeContext = React.createContext([]);
 
 export const ThemeContextProvider = (props: { children: ReactNode }) => {
   const [currentHour, setCurrentHour] = useState(new Date().getHours());
   const isLightRange = currentHour >= 7 && currentHour <= 18;
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme]: IThemeSetter = useState('light');
 
   useEffect(() => {
     // initial theme set
@@ -15,9 +28,9 @@ export const ThemeContextProvider = (props: { children: ReactNode }) => {
     const intervalId = setInterval(() => {
       if (currentHour !== new Date().getHours()) {
         setCurrentHour(new Date().getHours());
-        (setTheme as Function)(isLightRange ? 'light' : 'dark');
+        setTheme(isLightRange ? 'light' : 'dark');
       }
-    }, 5000);
+    }, TEN_MINUTES);
 
     return () => clearInterval(intervalId);
   }, [currentHour, isLightRange]);

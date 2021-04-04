@@ -2,7 +2,7 @@ import { COLORS } from '../constants/colors';
 import useTheme from '../hooks/useTheme';
 
 const Hero = (): JSX.Element => {
-  const [theme, setTheme] = useTheme();
+  const [theme] = useTheme();
 
   return (
     <div className={`hero ${theme}`}>
