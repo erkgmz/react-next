@@ -16,12 +16,17 @@ const Layout = (props: { children: ReactNode }) => {
       <Footer />
       <style jsx>{`
         :global(html, body, .layout) {
-          background-color: ${theme === 'light' ? COLORS.WHITE : COLORS.BLACK};
+          background-color: ${COLORS.BG_BLUE};
         }
         :global(.layout) {
           scroll-behavior: smooth;
-          font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir,
-            Helvetica, sans-serif;
+          font-family:
+            -apple-system,
+            BlinkMacSystemFont,
+            Avenir Next,
+            Avenir,
+            Helvetica,
+            sans-serif;
           transition-property: background-color;
           transition-duration: 0.2s;
           transition-timing-function: ease-in;

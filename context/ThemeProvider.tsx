@@ -10,7 +10,7 @@ const TEN_MINUTES = 600000;
 
 export type IThemeSetter = [
   'light' | 'dark',
-  Dispatch<SetStateAction<'light' | 'dark'>>
+  Dispatch<SetStateAction<'light' | 'dark'>>,
 ];
 
 export const ThemeContext = React.createContext([]);

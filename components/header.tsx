@@ -1,4 +1,5 @@
 import { COLORS } from '../constants/colors';
+import { ThemeContext } from '../context/ThemeProvider';
 import useTheme from '../hooks/useTheme';
 
 const Header = (): JSX.Element => {
@@ -18,6 +19,10 @@ const Header = (): JSX.Element => {
             </li> */}
         </ul>
         <style jsx>{`
+          header {
+            background: ${COLORS.BG_BLUE};
+          }
+
           nav {
             padding: 20px;
           }
@@ -38,9 +43,7 @@ const Header = (): JSX.Element => {
           li a {
             font-size: 13px;
             letter-spacing: 1px;
-            color: ${theme === 'light'
-              ? COLORS.LINK_BLUE_ON_LIGHT
-              : COLORS.LINK_BLUE_ON_DARK};
+            color: ${COLORS.WHITE};
           }
         `}</style>
       </nav>

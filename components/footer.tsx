@@ -9,7 +9,10 @@ const Footer = (): JSX.Element => {
   };
 
   return (
-    <footer className="footer" id="footer">
+    <footer
+      className="footer"
+      id="footer"
+    >
       <ul className="footer-links">
         <li className="link">
           <a href="//www.linkedin.com/in/erkgmz/">LinkedIn</a>
@@ -25,11 +28,13 @@ const Footer = (): JSX.Element => {
           </button>
         </li>
       </ul>
-      <p className="copyright">&copy; 2020 Erik Gomez All Rights Reserved.</p>
+      <p className="copyright">
+        &copy; {new Date().getFullYear()} Erik Gomez All Rights Reserved.
+      </p>
       <style jsx>{`
         footer {
           box-sizing: border-box;
-          background-color: ${COLORS.FOOTER_BG_COLOR};
+          background-color: ${COLORS.BG_BLUE};
           color: white;
           padding: 10px;
           text-align: center;

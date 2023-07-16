@@ -1,6 +1,6 @@
 interface IColors {
   BLACK: '#15161E';
-  FOOTER_BG_COLOR: '#0C5B97';
+  BG_BLUE: '#0C5B97';
   LINK_BLUE_ON_LIGHT: '#0C5B97';
   LINK_BLUE_ON_DARK: '#5AAEF6';
   WHITE: '#FFFFFF';
@@ -9,7 +9,7 @@ interface IColors {
 
 export const COLORS: IColors = {
   BLACK: '#15161E',
-  FOOTER_BG_COLOR: '#0C5B97',
+  BG_BLUE: '#0C5B97',
   LINK_BLUE_ON_LIGHT: '#0C5B97',
   LINK_BLUE_ON_DARK: '#5AAEF6',
   WHITE: '#FFFFFF',

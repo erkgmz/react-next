@@ -13,8 +13,9 @@ const Hero = (): JSX.Element => {
         </h2>
         <p className="city">Los Angeles, CA.</p>
         <p>
-          🚧 My site is currently under construction. In the meantime, you can
-          hit me up on <a href="//www.linkedin.com/in/erkgmz/">LinkedIn</a>.
+          🚧 Site is currently under construction. If you'd like to contact me,
+          feel free to say hello on{' '}
+          <a href="//www.linkedin.com/in/erkgmz/">LinkedIn</a>.
         </p>
       </div>
       <style jsx>{`
@@ -26,6 +27,7 @@ const Hero = (): JSX.Element => {
           box-sizing: border-box;
           min-height: 640px;
           height: 87vh;
+          background: ${theme === 'light' ? COLORS.WHITE : COLORS.BLACK};
           color: ${COLORS.BLACK};
         }
 

@@ -11,7 +11,7 @@ export const smoothScrollTo = (yAxis: number, scrollDuration: number) => {
     if (scrollCount >= Math.PI) return;
     window.scrollTo(
       0,
-      yAxis + cosParameter + cosParameter * Math.cos(scrollCount)
+      yAxis + cosParameter + cosParameter * Math.cos(scrollCount),
     );
     oldTimestamp = newTimestamp;
     window.requestAnimationFrame(step);
